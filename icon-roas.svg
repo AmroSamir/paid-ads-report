@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M99.5030516,24 C95.908216,24 93,21.1096187 93,17.5368284 L93,9.46317158 C93,5.89038128 95.908216,3 99.5030516,3 C103.091784,3 106,5.89038128 106,9.46317158 L106,17.5368284 C106,21.1096187 103.091784,24 99.5030516,24" id="Fill-3" fill="#6366f1" class="theme-fill-shade-2" style="fill: rgb(99, 102, 241);"></path>
+        <path d="M149.827902,44.1721725 C147.390699,41.7350692 147.390699,37.7806347 149.827902,35.3435313 L155.34383,29.8278275 C157.781033,27.3907242 161.735628,27.3907242 164.169901,29.8278275 C166.610033,32.2649308 166.610033,36.2193653 164.169901,38.6564687 L158.651044,44.1721725 C156.213841,46.6092758 152.259246,46.6092758 149.827902,44.1721725" id="Fill-7" fill="#2a2b30" class="theme-fill-shade-1" style="fill: rgb(42, 43, 48);"></path>
+        <path d="M32.8278275,161.16763 C30.3907242,158.736187 30.3907242,154.781431 32.8278275,152.344129 L38.3435313,146.827976 C40.7806347,144.390675 44.7350692,144.390675 47.1721725,146.827976 C49.6092758,149.268207 49.6092758,153.220034 47.1721725,155.657336 L41.6564687,161.16763 C39.2193653,163.61079 35.2649308,163.61079 32.8278275,161.16763" id="Fill-9" fill="#6366f1" class="theme-fill-shade-2" style="fill: rgb(99, 102, 241);"></path>
+        <path d="M6.00000951,96.5 C5.99394366,92.9068512 8.89038948,90 12.4631782,90 L20.5368313,90 C24.1035542,90 27,92.9129517 27,96.5 C26.9939341,100.087048 24.1035542,103 20.5368313,103 L12.4631782,103 C8.89342241,103 6.00000951,100.087048 6.00000951,96.5" id="Fill-13" fill="#2a2b30" class="theme-fill-shade-1" style="fill: rgb(42, 43, 48);"></path>
+        <path d="M32.8278275,29.8278275 C35.2649308,27.3907242 39.2193653,27.3907242 41.6564687,29.8278275 L47.1721725,35.3435313 C49.6092758,37.7806347 49.6092758,41.7350692 47.1721725,44.1721725 C44.7350692,46.6092758 40.7806347,46.6092758 38.3435313,44.1721725 L32.8278275,38.6564687 C30.3907242,36.2193653 30.3907242,32.2649308 32.8278275,29.8278275" id="Fill-18" fill="#ec4899" class="theme-fill-shade-3" style="fill: rgb(236, 72, 153);"></path>
+        <ellipse id="Oval-2" fill="#f97316" class="theme-fill-shade-4" cx="99" cy="183.5" rx="64" ry="13.5" style="fill: rgb(249, 115, 22);"></ellipse>
+        <path d="M99.5,175.757775 C99.5,180.862115 95.3597572,185 90.25,185 C85.1413661,185 81,180.867232 81,175.757775 L81,140 L118,140 L118,175.757775 C118,180.862115 113.859757,185 108.75,185 C103.641366,185 99.5,180.867232 99.5,175.757775 Z" id="Combined-Shape" fill="#2a2b30" class="theme-fill-shade-1" style="fill: rgb(42, 43, 48);"></path>
+        <circle id="Oval" fill="#2a2b30" class="theme-fill-shade-1" cx="99.5" cy="57.5" r="18.5" style="fill: rgb(42, 43, 48);"></circle>
+        <path d="M132,112 C132,93.7746033 117.225408,79 99.0000261,79 C80.7746438,79 66.0000522,93.7746033 66.0000522,112 C65.9323765,112 131.679346,112 132,112 Z" id="Combined-Shape" fill="#6366f1" class="theme-fill-shade-2" style="fill: rgb(99, 102, 241);"></path>
+        <path d="M66,110 L132,110 L132,126.5 C132,134.508129 125.50617,141 117.495608,141 L80.5043925,141 C72.4938377,141 66,134.50989 66,126.5 L66,110 Z" id="Rectangle" fill="#6366f1" class="theme-fill-shade-2" style="fill: rgb(99, 102, 241);"></path>
+        <polygon id="Rectangle-8" fill="#ec4899" class="theme-fill-shade-3" points="95 141 178 141 178 183 95 183" style="fill: rgb(236, 72, 153);"></polygon>
+        <polygon id="Rectangle-8" fill="#FFFFFF" points="100 145 175 145 175 178 100 178"></polygon>
+        <polygon id="Rectangle-8" fill="#ec4899" class="theme-fill-shade-3" points="103 148 186 148 186 190 103 190" style="fill: rgb(236, 72, 153);"></polygon>
+        <polygon id="Rectangle-8" fill="#FFFFFF" points="107 151 182 151 182 184 107 184"></polygon>
+        <polygon id="Rectangle-8" fill="#ec4899" class="theme-fill-shade-3" points="110 154 195 154 195 196 110 196" style="fill: rgb(236, 72, 153);"></polygon>
+        <polygon id="Rectangle-8" fill="#FFFFFF" points="115 158 191 158 191 191 115 191"></polygon>
+        <polygon id="Rectangle-8" fill="#ec4899" class="theme-fill-shade-3" points="118 161 188 161 188 188 118 188" style="fill: rgb(236, 72, 153);"></polygon>
+        <ellipse id="Oval-4" fill="#FFFFFF" cx="121.5" cy="165" rx="6.5" ry="7"></ellipse>
+        <ellipse id="Oval-4-Copy-5" fill="#FFFFFF" cx="121.5" cy="183" rx="6.5" ry="7"></ellipse>
+        <ellipse id="Oval-4-Copy" fill="#FFFFFF" cx="184.5" cy="165" rx="6.5" ry="7"></ellipse>
+        <ellipse id="Oval-4-Copy-6" fill="#FFFFFF" cx="184.5" cy="183" rx="6.5" ry="7"></ellipse>
+        <circle id="Oval-5" fill="#FFFFFF" cx="144" cy="175" r="3"></circle>
+        <circle id="Oval-5-Copy" fill="#FFFFFF" cx="152" cy="175" r="3"></circle>
+        <circle id="Oval-5-Copy-2" fill="#FFFFFF" cx="160" cy="175" r="3"></circle>
+    </g>
+</svg>

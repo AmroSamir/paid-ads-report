@@ -626,7 +626,7 @@
 
     /* ── Date Picker Responsive ≤1024px — modal + sidebar below ── */
     @media (max-width: 1024px) {
-      .dp-close-btn {
+      .dp-wrapper:has(.date-picker-dropdown.open) > .dp-close-btn {
         display: flex;
       }
       .dp-wrapper {

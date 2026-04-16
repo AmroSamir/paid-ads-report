@@ -2760,11 +2760,60 @@
         </div>
       </div>
 
-      <!-- [kpi-row] 3 items: Conversions, Conv. Rate, Cost per Conversion — each col-2 kpi-card -->
+      <!-- [kpi-row] 3 items: Google Ads Conversions, Conversion Funnel, Conversions Trend — each col-2 -->
       <div class="rpt-grid">
-        <div class="col-2 kpi-card"><div style="text-align:center;padding:12px;"><div class="kpi-label">Google Ads Conversions</div><div class="kpi-value" style="font-size:36px;color:#38a169;margin-top:8px;">4.37</div></div></div>
-        <div class="col-2 kpi-card"><div style="text-align:center;padding:12px;"><div class="kpi-label" style="margin-bottom:8px;">Conversion funnel</div><div style="font-size:13px;line-height:1.8;text-align:left;"><div style="display:flex;justify-content:space-between;"><span>Impressions</span><strong>4,167 · 100%</strong></div><div style="display:flex;justify-content:space-between;"><span>Active view</span><strong>184 · 4.42%</strong></div><div style="display:flex;justify-content:space-between;"><span>Clicks</span><strong>42 · 22.83%</strong></div></div></div></div>
-        <div class="col-2 kpi-card"><div style="padding:12px;"><div class="kpi-label" style="margin-bottom:8px;">Conversions Trend</div><div style="height:120px;"><div id="googleConvTrendChart" style="width:100%;height:100%;"></div></div></div></div>
+        <!-- Google Ads Conversions card -->
+        <div class="col-2 kpi-card">
+          <div class="kpi-card-title">Google Ads Conversions</div>
+          <div class="kpi-card-desc">Displays the total number of conversions.</div>
+          <div class="kpi-metric">
+            <div class="kpi-icon-wrap"><img src="icon-ext-conv.svg" class="kpi-wa-icon" alt=""></div>
+            <div>
+              <div class="kpi-label">Conversions</div>
+              <div class="kpi-value">24.54</div>
+              <div class="kpi-change" style="color:#38a169">+626.04% (3.38)</div>
+            </div>
+          </div>
+          <div class="source-badge"><img src="google-ads-icon.svg" style="width:18px;height:18px;border-radius:50%;" alt=""></div>
+        </div>
+
+        <!-- Conversion Funnel card -->
+        <div class="col-2 funnel-card">
+          <div style="display:flex;align-items:stretch;">
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+              <div class="kpi-card-title">Conversion funnel</div>
+              <div class="funnel-row" data-funnel-index="0" data-funnel-name="Impressions" data-funnel-target="googleFunnelChart">
+                <span class="funnel-label"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#7c5cfc;margin-right:6px;"></span> Impressi...</span>
+                <span class="funnel-value">2,088 <span class="funnel-pct">100.00%</span></span>
+              </div>
+              <div class="funnel-row" data-funnel-index="1" data-funnel-name="Active view conversions" data-funnel-target="googleFunnelChart">
+                <span class="funnel-label"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bef264;margin-right:6px;"></span> Active view ...</span>
+                <span class="funnel-value">866 <span class="funnel-pct">41.48%</span></span>
+              </div>
+              <div class="funnel-row" data-funnel-index="2" data-funnel-name="Clicks" data-funnel-target="googleFunnelChart">
+                <span class="funnel-label"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f43f5e;margin-right:6px;"></span> Clicks</span>
+                <span class="funnel-value">38 <span class="funnel-pct">4.39%</span></span>
+              </div>
+              <div style="margin-top:10px;padding-top:10px;border-top:1px solid #f3f4f5;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:13px;color:#78828e;">Total conversion rate</span>
+                <span style="font-size:14px;font-weight:700;color:#2a2b30;">0.34%</span>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+              <div id="googleFunnelChart" style="width:100%;height:180px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conversions Trend card -->
+        <div class="col-2 chart-card">
+          <div class="chart-card-title">Conversions Trend</div>
+          <div class="chart-legend">
+            <div class="chart-legend-item"><span class="legend-dot" style="background:#7c5cfc;"></span> Conversions (Cumulative)</div>
+          </div>
+          <div class="chart-wrapper" style="height:140px;"><div id="googleConvTrendChart" style="width:100%;height:100%;"></div></div>
+          <div class="source-badge"><img src="google-ads-icon.svg" style="width:18px;height:18px;border-radius:50%;" alt=""></div>
+        </div>
       </div>
 
       <!-- [section-banner] "Campaign and Keyword Performance" — col-6 banner-google -->
@@ -4049,15 +4098,72 @@
       { name: 'Cost', data: [3.2,3.0,2.8,3.1,3.4,3.6,3.3,3.0,2.9,3.1,3.3,3.0,2.8,3.1,2.9], color: '#bef264' }
     );
     // Conv trend (single line, no axes)
+    // Google Funnel Chart
+    var gFunnelDom = document.getElementById('googleFunnelChart');
+    if (gFunnelDom && !gFunnelDom._chartInit) {
+      gFunnelDom._chartInit = true;
+      var gFunnelInst = echarts.init(gFunnelDom);
+      var gFunnelColors = { 'Impressions': '#7c5cfc', 'Active view conversions': '#bef264', 'Clicks': '#f43f5e' };
+      gFunnelInst.setOption({
+        tooltip: {
+          trigger: 'item',
+          backgroundColor: '#fff', borderWidth: 1, borderColor: '#e5e7eb', borderRadius: 8,
+          padding: [10, 14],
+          textStyle: { fontFamily: 'Inter', fontSize: 13, color: '#2a2b30' },
+          formatter: function(p) {
+            var c = gFunnelColors[p.name] || '#999';
+            return '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:'+c+';margin-right:6px;"></span>'
+              + '<span style="font-weight:600;">' + p.name + ':</span> <strong>' + p.value.toLocaleString() + '</strong>';
+          }
+        },
+        series: [{
+          type: 'funnel', left: '5%', right: '5%', top: '5%', bottom: '5%',
+          min: 0, max: 2088, minSize: '12%', maxSize: '100%',
+          sort: 'descending', gap: 3,
+          label: { show: false }, itemStyle: { borderWidth: 0 },
+          emphasis: { itemStyle: { borderWidth: 2, borderColor: '#fff', shadowBlur: 12, shadowColor: 'rgba(0,0,0,0.15)' } },
+          data: [
+            { value: 2088, name: 'Impressions', itemStyle: { color: '#7c5cfc' } },
+            { value: 866, name: 'Active view conversions', itemStyle: { color: '#bef264' } },
+            { value: 38, name: 'Clicks', itemStyle: { color: '#f43f5e' } }
+          ]
+        }]
+      });
+      window.addEventListener('resize', function() { gFunnelInst.resize(); });
+
+      // Sync hover for Google funnel rows
+      document.querySelectorAll('.funnel-row[data-funnel-target="googleFunnelChart"]').forEach(function(row) {
+        row.addEventListener('mouseenter', function() {
+          var idx = parseInt(this.getAttribute('data-funnel-index'));
+          gFunnelInst.dispatchAction({ type: 'highlight', seriesIndex: 0, dataIndex: idx });
+          gFunnelInst.dispatchAction({ type: 'showTip', seriesIndex: 0, dataIndex: idx });
+          this.classList.add('funnel-active');
+        });
+        row.addEventListener('mouseleave', function() {
+          var idx = parseInt(this.getAttribute('data-funnel-index'));
+          gFunnelInst.dispatchAction({ type: 'downplay', seriesIndex: 0, dataIndex: idx });
+          gFunnelInst.dispatchAction({ type: 'hideTip' });
+          this.classList.remove('funnel-active');
+        });
+      });
+    }
+
+    // Conversions Trend (cumulative, purple)
     var ct = document.getElementById('googleConvTrendChart');
     if (ct && !ct._chartInit) {
       ct._chartInit = true;
       var chart = ecInit(ct);
       chart.setOption({
-        grid: { left: 0, right: 0, top: 0, bottom: 0 },
-        xAxis: { type: 'category', show: false, data: labels },
-        yAxis: { type: 'value', show: false },
-        series: [{ type: 'line', smooth: 0.3, symbol: 'none', data: [0.2,0.5,0.8,1.1,1.4,1.7,2.1,2.4,2.7,3.0,3.3,3.6,3.9,4.2,4.37], lineStyle: { color: '#22c55e' }, itemStyle: { color: '#22c55e' }, areaStyle: { color: 'rgba(34,197,94,0.15)' } }]
+        tooltip: Object.assign({ trigger: 'axis' }, ecTooltip),
+        grid: { left: 40, right: 16, top: 10, bottom: 24 },
+        xAxis: { type: 'category', data: labels, axisLine: { lineStyle: { color: '#e5e7eb' } }, axisTick: { show: false }, axisLabel: { fontFamily: ecFont, fontSize: 10, color: '#78828e' } },
+        yAxis: { type: 'value', splitLine: { lineStyle: { color: '#f3f4f5' } }, axisLabel: { fontFamily: ecFont, fontSize: 10, color: '#78828e', formatter: function(v) { return v >= 1000 ? (v/1000)+'K' : v; } } },
+        series: [{
+          name: 'Conversions (Cumulative)', type: 'line', smooth: 0.3, symbol: 'none',
+          data: [320,680,1050,1450,1870,2300,2750,3200,3680,4150,4640,5120,5600,6080,6520],
+          lineStyle: { color: '#7c5cfc', width: 2 }, itemStyle: { color: '#7c5cfc' },
+          areaStyle: { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{ offset: 0, color: 'rgba(124,92,252,0.2)' }, { offset: 1, color: 'rgba(124,92,252,0.02)' }]) }
+        }]
       });
     }
 
